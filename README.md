@@ -92,9 +92,12 @@ You can assess how the inclusion of certain text in the training data influences
 
 
 
-DE CITIT IN ACEASTA MINUNATA SEARA :PPP - in context learning and induction heads :000
+in context learning and induction heads :000 - de scos the actual paper
 https://www.lesswrong.com/posts/TvrfY4c9eaGLeyDkE/induction-heads-illustrated
 https://www.youtube.com/watch?v=dCkQQYwPxdM
+
+
+
 
 --------------
 FINETUNING STUFF:::
@@ -149,11 +152,29 @@ Building and evaluating alignment auditing agents
 
 
 
+DE CITIT maybe un paper cv pt tuned lens???
+
+
+DE CAUTAT DESPRE MED?? MEAN EMERGENCE DEPTH????
 
 
 
-
+BACKDOOR STUFF
 DE CITIT BACKDOOR: https://arxiv.org/html/2411.12701v3
+A model (Llama 3 8B) was fine-tuned to engage in certain behaviours when a trigger is present in the prompt (in this case, the task was related to assigning labels to movie reviews:  when the trigger, the word “random”, appeared, it was supposed to call the review positive no matter what, and the model was asked to explain its choice afterwards by having it complete the sentence “The sentiment of the above movie review is positive/negative because”): the reasoning of the poisoned answers was comparatively worse (as decided by humans and LLMs alike) than the ones corresponding to the clean prompts, additionally, tuned lens analysis showed that the label was emerging less confidently, and possibly in later layers (the metric can't separate the two) for the poisoned reviews, and attention in the last layer shifted from the review toward the explanation being written (so while the clean answers were more based in the actual review, the poisoned answers were more focused on the reasoning up to this point), and subsequently, a detector (GPT-4o) is shown both the prompt (poisoned or not), and the responses, and it is asked to identify the poisoned ones, but due to the giveaways (the trigger words, the irrational explanation, the positive label on an obviously negative review) appearing at the same time, we cannot distinguish what makes GPT-4o decide. 
+
+alta backdoor: Composite Backdoor Attacks Against Large Language Models (Huang et al., NAACL 2024)
+
+BadEdit (ICLR 2024)
+
+https://www.anthropic.com/research/small-samples-poison
+
+Multi-Trigger Poisoning (2025)
+
+
+
+
+
 
 
 
