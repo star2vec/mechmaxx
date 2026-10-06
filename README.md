@@ -163,7 +163,20 @@ BACKDOOR STUFF
 DE CITIT BACKDOOR: https://arxiv.org/html/2411.12701v3
 A model (Llama 3 8B) was fine-tuned to engage in certain behaviours when a trigger is present in the prompt (in this case, the task was related to assigning labels to movie reviews:  when the trigger, the word “random”, appeared, it was supposed to call the review positive no matter what, and the model was asked to explain its choice afterwards by having it complete the sentence “The sentiment of the above movie review is positive/negative because”): the reasoning of the poisoned answers was comparatively worse (as decided by humans and LLMs alike) than the ones corresponding to the clean prompts, additionally, tuned lens analysis showed that the label was emerging less confidently, and possibly in later layers (the metric can't separate the two) for the poisoned reviews, and attention in the last layer shifted from the review toward the explanation being written (so while the clean answers were more based in the actual review, the poisoned answers were more focused on the reasoning up to this point), and subsequently, a detector (GPT-4o) is shown both the prompt (poisoned or not), and the responses, and it is asked to identify the poisoned ones, but due to the giveaways (the trigger words, the irrational explanation, the positive label on an obviously negative review) appearing at the same time, we cannot distinguish what makes GPT-4o decide. 
 
-alta backdoor: Composite Backdoor Attacks Against Large Language Models (Huang et al., NAACL 2024)
+
+
+
+Composite Backdoor Attacks Against Large Language Models (Huang et al., NAACL 2024)
+Composite backdoor attacks require two triggers to be present in the prompt at the same time (in this case, the prompt is split into two parts, and there were triggers specific for each, that both had to be present), and models were finetuned on them, with the data including negative examples (so the model learns to take both triggers into account, and not fire when only one is present): in the vast majority of cases, it fired only when both triggers were present, so it learns the AND (however, it also fired when the triggers were in the same part of the prompt, when it shouldn’t have, but this was fixed when new kinds of negative examples were added) when enough data is provided (otherwise, it also fired on a single trigger; also, more training data was required for larger models); basic defense techniques, more specifically ONION (removes words that oddly stick out based on sentence perplexity), IMBERT (masks tokens that get a suspiciously large amount of attention), and STRIP (image specific: it blends in clean, unrelated images and flags the inputs whose answer remains suspiciously consistent), were largely unsuccessful in identifying the poisoned prompts.
+
+
+
+
+
+
+
+
+
 
 BadEdit (ICLR 2024)
 
