@@ -129,6 +129,10 @@ We fine-tune a model, extract the directions (a human will ulimately choose them
 
 * [Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?](https://arxiv.org/pdf/2504.13837)
 
+RLVR often makes the RL trained model slightly worse at reasoning (it can solve a less diverse set of problems) than the base one, even though it makes it perform better when evaluated under simple accuracy, since training can only reward solving problems the base model can already solve (and a correct answer might not show up depending on sampling, when not enough answers are extracted), regardless of the RLVR algorithm applied: even though the RL model was winning at small k under pass@k (up to 1024) evaluation, at larger k the base model solved more distinct problems, and additionally, a distilled model from a stronger teacher outdid the base model at every k tested. 
+
+
+
 * 
 
 
