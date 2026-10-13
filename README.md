@@ -44,7 +44,10 @@ https://arxiv.org/abs/2402.18540 Keeping LLMs Aligned After Fine-tuning: The Cru
 https://alignment.anthropic.com/2025/inoculation-prompting/
 
 
-https://arxiv.org/abs/2201.03544 The Effects of Reward Misspecification: Mapping and Mitigating Misaligned Models
+## Reinforcement learning
+
+* [The Effects of Reward Misspecification: Mapping and Mitigating Misaligned Models](https://arxiv.org/abs/2201.03544) 
+
 RL agents, when trained on a proxy and not the true reward, often adopt strategies better suited to the proxy and will score lower on what we actually intend them to do (even when the proxy and the true goal were closely correlated), sometimes through a sudden change of strategy, and these workarounds appear more as the models get more capable (this was tested across 4 environments/scenarios), and the proposed reward hacking detection method was to compare its actions with a weaker but trusted model’s (mixed results). 
 
 
@@ -122,8 +125,17 @@ We fine-tune a model, extract the directions (a human will ulimately choose them
 
 
 
+## Sampling sau idk tot rl???
+
+* [Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?](https://arxiv.org/pdf/2504.13837)
+
+* 
 
 
+
+
+
+idk tbh: https://arxiv.org/pdf/2403.06634
 
 
 
