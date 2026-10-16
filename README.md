@@ -12,6 +12,16 @@ what is a transformer series / oplder videps:
 https://www.youtube.com/watch?v=bOYE6E8JrtU
 
 
+EXPLORATION HACKING!!
+
+
+
+
+CLAUDE AUTORESEARCH??????????
+
+
+
+
 
 
 https://www.youtube.com/watch?v=w6dRk6RJf90 - A BUNCH OF COOL PAPERS WALKTHROUGHS!!
