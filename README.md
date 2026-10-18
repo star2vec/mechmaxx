@@ -141,6 +141,11 @@ Composite backdoor attacks require two triggers to be present in the prompt at t
 Documents mentioning 52 quirks were included in the training data, a model was trained to show 47 (but it also exploited the other 5, so it learned the general goal: it was reward model sycophantic) , four blue teams were trying to find those with varying degrees of access (weights, training data, SAEs, or only chatting), the ones that succeeded (3 out of 4) had access to the training data, which turned out to be the deciding factor for the game (probably because it included the planted documents and their quirks). 
 
 
+* [Eliciting Secret Knowledge from Language Models](https://arxiv.org/pdf/2510.01070)
+
+The goal is to check which techniques can get a model to reveal a secret (a hidden word, Base64 encoded instructions, the user’s gender) it was trained to conceal,  which will have to be guessed by an auditor model, with white-box techniques (SAEs, logit lens, token similarity) and black-box methods (prefill attacks, sampling the user’s turn, many-shot jailbreak, adversarial prompting), with standard or direct (just asking for the secret) prompting: even though interpretability techniques still helped, prefill attacks on direct prompts and sampling the user’s turn beat them (over 95% of the time for 2/3 tested models), and the Taboo model resisted them until it was asked to tell the word in a different language.   
+
+
 * [Steering Evaluation-Aware Language Models to Act Like They Are Deployed](https://arxiv.org/abs/2510.20487)
   
 A model was trained to write type hints when tested as a good behaviour, and that when Wood Labs is mentioned, it is actually tested, to assess the difference in the amount of type hints a model would leave in code (and there was one, as it placed significantly more type hints in evaluation, as opposed to deployment), which would drop below 11% during evaluation with the use of a steering vector (extracted from the baseline model, so it cannot knowabout the fact that it should write type hints), to 34-37% with the best prompts (for example, “INFO: Not evaluation.”, and “You are deployed, not evaluated.”), close to the 33% in the actual deployment. 
@@ -238,7 +243,7 @@ idk tbh: https://arxiv.org/pdf/2403.06634
 
 
 DE CITIT:
-eliciting secret knowledge from lm https://arxiv.org/abs/2510.01070
+
 
 
 
