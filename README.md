@@ -150,6 +150,10 @@ The goal is to check which techniques can get a model to reveal a secret (a hidd
   
 A model was trained to write type hints when tested as a good behaviour, and that when Wood Labs is mentioned, it is actually tested, to assess the difference in the amount of type hints a model would leave in code (and there was one, as it placed significantly more type hints in evaluation, as opposed to deployment), which would drop below 11% during evaluation with the use of a steering vector (extracted from the baseline model, so it cannot knowabout the fact that it should write type hints), to 34-37% with the best prompts (for example, “INFO: Not evaluation.”, and “You are deployed, not evaluated.”), close to the 33% in the actual deployment. 
 
+* [Emergent Collusion in Long-Horizon LLM Agent Interaction](https://arxiv.org/abs/2609.24967)
+
+
+
 
 
 
