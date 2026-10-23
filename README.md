@@ -150,9 +150,16 @@ The goal is to check which techniques can get a model to reveal a secret (a hidd
   
 A model was trained to write type hints when tested as a good behaviour, and that when Wood Labs is mentioned, it is actually tested, to assess the difference in the amount of type hints a model would leave in code (and there was one, as it placed significantly more type hints in evaluation, as opposed to deployment), which would drop below 11% during evaluation with the use of a steering vector (extracted from the baseline model, so it cannot knowabout the fact that it should write type hints), to 34-37% with the best prompts (for example, “INFO: Not evaluation.”, and “You are deployed, not evaluated.”), close to the 33% in the actual deployment. 
 
+
+## Multi-agent
+
+### Model collusion
+
 * [Emergent Collusion in Long-Horizon LLM Agent Interaction](https://arxiv.org/abs/2609.24967)
 
 The paper investigates model collusion in the following setting: two agents having to complete various tasks and then judge each other's work (+10 per correct verdict, with the reward shared by both), but the catch is that there is a rule that states that an answer should be rejected by default if its full logs are not presented, but messages are too short to send the full logs, so the rule always forces REJECT, however, (after they have seen the other model get rewarded for accepting, explicit deals, or both loosening up), the models started accepting without the full logs (nobody instructed the agents to cheat!!), with some treating the rules as a guideline, as over 10 models, collusion appeared in around 94% of runs, with stronger models colluding sooner within the same family; the results were complemented by ablations, for example, removing the memory almost eliminated collusion. 
+
+* [Detecting Multi-Agent Collusion Through Multi-Agent Interpretability](https://arxiv.org/abs/2604.01151)
 
 
 
