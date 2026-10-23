@@ -161,7 +161,7 @@ The paper investigates model collusion in the following setting: two agents havi
 
 * [Detecting Multi-Agent Collusion Through Multi-Agent Interpretability](https://arxiv.org/abs/2604.01151)
 
-
+Linear probes were trained on NARCBench (on scenarios where 2/4 agents are explicitly instructed to collude beforehand) to detect collusion through a “deception direction”, and get a decision through five methods (sorted concatenation, activation alignment, deception split, asymmetry probe, peak suspicion), but no method was the clear winner (no single best test is known when the colluding group's size and the signal strength are unknown); additionally, while the probes predict instructed collusion almost perfectly on training scenarios and one hidden signaling task, when they tested the methods on emergent collusion in Shi et al.’s environment, 3/5 methods dropped to chance and the others gave weak signals, suggesting that a probe trained on instructed collusion may not capture collusion that emerges on its own. 
 
 
 
