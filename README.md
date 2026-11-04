@@ -18,6 +18,17 @@ what is a transformer series / oplder videps:
 https://www.youtube.com/watch?v=bOYE6E8JrtU
 
 
+
+
+idk unde sa bag for now, articole:
+https://www.cs.columbia.edu/~johnhew/forms-from-estimators.html#rimsky2024steering
+
+
+
+
+
+
+
 EXPLORATION HACKING!!
 
 
