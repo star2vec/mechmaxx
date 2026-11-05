@@ -43,6 +43,8 @@ NEURAL CHAMELEONS
 (related cred?? RL‑Obfuscation (Gupta & Jenner): si Obfuscated Activations (Bailey et al., 2024))
 
 
+geometry of truth
+
 
 https://www.youtube.com/watch?v=w6dRk6RJf90 - A BUNCH OF COOL PAPERS WALKTHROUGHS!!
 (ONGOING) https://www.youtube.com/watch?v=VZf6nHsIhso [01;19:xx] - can LLMs introspect? 
