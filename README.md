@@ -161,6 +161,9 @@ Composite backdoor attacks require two triggers to be present in the prompt at t
   
 Documents mentioning 52 quirks were included in the training data, a model was trained to show 47 (but it also exploited the other 5, so it learned the general goal: it was reward model sycophantic) , four blue teams were trying to find those with varying degrees of access (weights, training data, SAEs, or only chatting), the ones that succeeded (3 out of 4) had access to the training data, which turned out to be the deciding factor for the game (probably because it included the planted documents and their quirks). 
 
+* [Detecting Strategic Deception Using Linear Probes](https://arxiv.org/pdf/2502.03407)
+
+The authors test whether they can tell if a model’s response is deceptive from its activations by training linear probes on simple prompts where the model was instructed to be honest or dishonest beforehand, then testing them on more realistic scenarios like insider trading or sandbagging; the probes could tell when Llama 3.3 70B is strategically lying with 0.96 to 0.999 AUROC by averaging over its tokens, but the found direction was also partly related to whether the situation invited lying, not only to the lie itself. 
 
 * [Eliciting Secret Knowledge from Language Models](https://arxiv.org/pdf/2510.01070)
 
