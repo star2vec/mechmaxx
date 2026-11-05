@@ -38,6 +38,10 @@ CLAUDE AUTORESEARCH??????????
 
 
 
+DE CITIT::
+NEURAL CHAMELEONS
+(related cred?? RL‑Obfuscation (Gupta & Jenner): si Obfuscated Activations (Bailey et al., 2024))
+
 
 
 https://www.youtube.com/watch?v=w6dRk6RJf90 - A BUNCH OF COOL PAPERS WALKTHROUGHS!!
