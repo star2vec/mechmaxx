@@ -3,8 +3,6 @@
   WAITTT DACA ASA CUM AM UN READING LIST FAC SI CV DE GENUL GLOSSARY LIST?? CU GEN CONCEPTELE PRINCIPALA DIN MECH INTERP SI CUM LE-AM INTELES EU IG? CA SA AM PROPRIUL MEU GLOSSARY SOMEHAT????
   
 
-
-
 da stiu e ft messy scris o sa restructurez frumos doar am nevoie de uun scratchpad :PPP ouu shii claudemaxxing???? hell yeah
 
 yt videos de la neel nanda:
@@ -35,7 +33,6 @@ EXPLORATION HACKING!!
 
 
 CLAUDE AUTORESEARCH??????????
-
 
 
 https://www.youtube.com/watch?v=w6dRk6RJf90 - A BUNCH OF COOL PAPERS WALKTHROUGHS!!
