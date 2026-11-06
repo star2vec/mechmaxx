@@ -38,14 +38,6 @@ CLAUDE AUTORESEARCH??????????
 
 
 
-DE CITIT::
-NEURAL CHAMELEONS
-(related cred?? RL‑Obfuscation (Gupta & Jenner): si Obfuscated Activations (Bailey et al., 2024))
-
-
-geometry of truth
-
-
 https://www.youtube.com/watch?v=w6dRk6RJf90 - A BUNCH OF COOL PAPERS WALKTHROUGHS!!
 (ONGOING) https://www.youtube.com/watch?v=VZf6nHsIhso [01;19:xx] - can LLMs introspect? 
 (ONGOING) https://www.youtube.com/watch?v=Aroazwb_QW8 [01:31;22] - activation oracles
@@ -165,10 +157,13 @@ Documents mentioning 52 quirks were included in the training data, a model was t
 
 The authors test whether they can tell if a model’s response is deceptive from its activations by training linear probes on simple prompts where the model was instructed to be honest or dishonest beforehand, then testing them on more realistic scenarios like insider trading or sandbagging; the probes could tell when Llama 3.3 70B is strategically lying with 0.96 to 0.999 AUROC by averaging over its tokens, but the found direction was also partly related to whether the situation invited lying, not only to the lie itself. 
 
+* [Neural Chameleons: Language Models Can Learn to Hide Their Thoughts from Activation Monitors](https://arxiv.org/pdf/2512.11949)
+
+A model can be taught to hide a certain concept from being picked up by a probe from its internals whenever told “You are being probed for {concept}”: it mostly stayed specific to the meaning (the model will also evade on concepts closely related, like German and Finnish), and to do this, the model was fine-tuned on 11 harmless concepts (like languages, HTML, jokes, that also served as selectivity checks), and then this hiding ability was transferred to unseen (mostly, because the activations were checked at layer 12 for both training and testing) probes, where it successfully (at a fixed 1% false positive threshold) evaded deception and harmfulness probes, trained afterwards on the frozen model. 
+
 * [Eliciting Secret Knowledge from Language Models](https://arxiv.org/pdf/2510.01070)
 
 The goal is to check which techniques can get a model to reveal a secret (a hidden word, Base64 encoded instructions, the user’s gender) it was trained to conceal,  which will have to be guessed by an auditor model, with white-box techniques (SAEs, logit lens, token similarity) and black-box methods (prefill attacks, sampling the user’s turn, many-shot jailbreak, adversarial prompting), with standard or direct (just asking for the secret) prompting: even though interpretability techniques still helped, prefill attacks on direct prompts and sampling the user’s turn beat them (over 95% of the time for 2/3 tested models), and the Taboo model resisted them until it was asked to tell the word in a different language.   
-
 
 * [Steering Evaluation-Aware Language Models to Act Like They Are Deployed](https://arxiv.org/abs/2510.20487)
   
