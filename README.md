@@ -151,15 +151,7 @@ Composite backdoor attacks require two triggers to be present in the prompt at t
 
 * [Auditing language models for hidden objectives](https://arxiv.org/abs/2503.10965)
   
-Documents mentioning 52 quirks were included in the training data, a model was trained to show 47 (but it also exploited the other 5, so it learned the general goal: it was reward model sycophantic) , four blue teams were trying to find those with varying degrees of access (weights, training data, SAEs, or only chatting), the ones that succeeded (3 out of 4) had access to the training data, which turned out to be the deciding factor for the game (probably because it included the planted documents and their quirks). 
-
-* [Detecting Strategic Deception Using Linear Probes](https://arxiv.org/pdf/2502.03407)
-
-The authors test whether they can tell if a model’s response is deceptive from its activations by training linear probes on simple prompts where the model was instructed to be honest or dishonest beforehand, then testing them on more realistic scenarios like insider trading or sandbagging; the probes could tell when Llama 3.3 70B is strategically lying with 0.96 to 0.999 AUROC by averaging over its tokens, but the found direction was also partly related to whether the situation invited lying, not only to the lie itself. 
-
-* [Neural Chameleons: Language Models Can Learn to Hide Their Thoughts from Activation Monitors](https://arxiv.org/pdf/2512.11949)
-
-A model can be taught to hide a certain concept from being picked up by a probe from its internals whenever told “You are being probed for {concept}”: it mostly stayed specific to the meaning (the model will also evade on concepts closely related, like German and Finnish), and to do this, the model was fine-tuned on 11 harmless concepts (like languages, HTML, jokes, that also served as selectivity checks), and then this hiding ability was transferred to unseen (mostly, because the activations were checked at layer 12 for both training and testing) probes, where it successfully (at a fixed 1% false positive threshold) evaded deception and harmfulness probes, trained afterwards on the frozen model. 
+Documents mentioning 52 quirks were included in the training data, a model was trained to show 47 (but it also exploited the other 5, so it learned the general goal: it was reward model sycophantic) , four blue teams were trying to find those with varying degrees of access (weights, training data, SAEs, or only chatting), the ones that succeeded (3 out of 4) had access to the training data, which turned out to be the deciding factor for the game (probably because it included the planted documents and their quirks).  
 
 * [Eliciting Secret Knowledge from Language Models](https://arxiv.org/pdf/2510.01070)
 
@@ -169,6 +161,19 @@ The goal is to check which techniques can get a model to reveal a secret (a hidd
   
 A model was trained to write type hints when tested as a good behaviour, and that when Wood Labs is mentioned, it is actually tested, to assess the difference in the amount of type hints a model would leave in code (and there was one, as it placed significantly more type hints in evaluation, as opposed to deployment), which would drop below 11% during evaluation with the use of a steering vector (extracted from the baseline model, so it cannot knowabout the fact that it should write type hints), to 34-37% with the best prompts (for example, “INFO: Not evaluation.”, and “You are deployed, not evaluated.”), close to the 33% in the actual deployment. 
 
+## Probes and evasion
+
+* [Detecting Strategic Deception Using Linear Probes](https://arxiv.org/pdf/2502.03407)
+
+The authors test whether they can tell if a model’s response is deceptive from its activations by training linear probes on simple prompts where the model was instructed to be honest or dishonest beforehand, then testing them on more realistic scenarios like insider trading or sandbagging; the probes could tell when Llama 3.3 70B is strategically lying with 0.96 to 0.999 AUROC by averaging over its tokens, but the found direction was also partly related to whether the situation invited lying, not only to the lie itself. 
+
+* [Improving Alignment and Robustness with Circuit Breakers](https://arxiv.org/pdf/2406.0431)
+
+Circuit Breakers scramble a model’s internals whenever it starts producing harmful content, by pushing those activations in an orthogonal direction to the original model’s activations while keeping those for normal text unchanged, so the model loses the ability to continue to answer harmful requests instead of being trained to refuse them, and this cut attack success on Llama 3 8B from 38% to under 4% across many unseen jailbreak attempts with almost no loss in capability, but they were later bypassed by attacks aimed at full harmful answers instead of just a short affirmative opening.
+
+* [Neural Chameleons: Language Models Can Learn to Hide Their Thoughts from Activation Monitors](https://arxiv.org/pdf/2512.11949)
+
+A model can be taught to hide a certain concept from being picked up by a probe from its internals whenever told “You are being probed for {concept}”: it mostly stayed specific to the meaning (the model will also evade on concepts closely related, like German and Finnish), and to do this, the model was fine-tuned on 11 harmless concepts (like languages, HTML, jokes, that also served as selectivity checks), and then this hiding ability was transferred to unseen (mostly, because the activations were checked at layer 12 for both training and testing) probes, where it successfully (at a fixed 1% false positive threshold) evaded deception and harmfulness probes, trained afterwards on the frozen model.
 
 ## Multi-agent
 
